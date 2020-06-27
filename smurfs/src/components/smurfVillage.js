@@ -15,7 +15,7 @@ const Smurf = props => {
       </div>
       <br></br>
       <br></br>
-      <button onClick={props.getSmurf}>Order Daily Special</button>
+      <p>Your Daily Special:</p>
       <div>
         <h3>{props.name}</h3>
         <h3>{props.age}</h3>
@@ -35,5 +35,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getSmurf, postSmurf }
+  { getSmurf }
 )(Smurf);

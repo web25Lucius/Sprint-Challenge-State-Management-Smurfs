@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SmurfEntree from "./menuDisplay";
 import { connect } from "react-redux";
 import { nextIngredient } from "../actions/index";
+import { getSmurf} from "../actions/smurfActions"
 
 const Form = props => {
   
@@ -19,7 +20,7 @@ const Form = props => {
 
   const formSubmit = e => {
     e.preventDefault();
-    console.log("Conjured Smurf is on the way. Order received!", formState);
+    console.log("Form submitted. Smurf is on the way. Order received!", formState);
 
     setFormState({
       name: "",
@@ -32,7 +33,7 @@ const Form = props => {
     <>
       <form onSubmit={formSubmit}>
         <label htmlFor="name">
-          Name
+          Name &nbsp;
           <input
             type="text"
             name="name"
@@ -40,9 +41,10 @@ const Form = props => {
             value={formState.name}
             onChange={inputChange}
           />
+          <br></br>
         </label>
         <label htmlFor="age">
-          Age
+          Age &nbsp;
           <input
             type="text"
             name="age"
@@ -51,8 +53,9 @@ const Form = props => {
             onChange={inputChange}
           />
         </label>
+        <br></br>
         <label htmlFor="height">
-          Height
+          Height &nbsp;
           <input
             name="height"
             id="height"
@@ -60,6 +63,7 @@ const Form = props => {
             onChange={inputChange}
           />
         </label>
+        <br></br>
         <button
           onClick={() => {
             nextIngredient(formState);
@@ -67,10 +71,15 @@ const Form = props => {
         >
           Submit Conjured Order
         </button>
+        <br></br>
+        <p>or you can try our Daily Special by clicking below</p>
+
+       <button onClick={getSmurf}>Order Daily Special</button> 
       </form>
       <div>
         <SmurfEntree />
       </div>
+
     </>
   );
 };
