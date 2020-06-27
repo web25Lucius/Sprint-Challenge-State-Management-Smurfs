@@ -65,7 +65,7 @@ const Form = props => {
             nextIngredient(formState);
           }}
         >
-          Submit Order
+          Submit Conjured Order
         </button>
       </form>
       <div>
