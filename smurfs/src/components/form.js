@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import SmurfEntree from "./menuDisplay";
 import { connect } from "react-redux";
 import { nextIngredient } from "../actions/index";
-import { getSmurf} from "../actions/smurfActions"
+//import { getSmurf} from "../actions/smurfActions"
 
-const Form = props => {
+const SmurfOrderForm = props => {
   
   const [formState, setFormState] = useState({
     name: "",
@@ -23,6 +23,7 @@ const Form = props => {
     console.log("Form submitted. Smurf is on the way. Order received!", formState);
 
     setFormState({
+      
       name: "",
       age: 0,
       height: ""
@@ -72,9 +73,7 @@ const Form = props => {
           Submit Conjured Order
         </button>
         <br></br>
-        <p>or you can try our Daily Special by clicking below</p>
-
-       <button onClick={getSmurf}>Order Daily Special</button> 
+       
       </form>
       <div>
         <SmurfEntree />
@@ -87,4 +86,8 @@ const Form = props => {
 export default connect(
   null,
   { nextIngredient }
-)(Form);
+)(SmurfOrderForm);
+
+
+
+//<button onClick={getSmurf}>Order Daily Special</button> 
